@@ -1,12 +1,13 @@
-﻿@using WebApplication1.Models
-@model IEnumerable<WebApplication1.Models.Restaurant>
+﻿
+@using WebApplication1.Models
+@model WebApplication1.ViewModels.HomeIndexViewModel
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Restaurants</title>
 </head>
 <body>
     <table>
-        @foreach (Restaurant rest in Model)
+        @foreach (Restaurant rest in Model.Restaurants)
         {
             <tr>
                 <td>@rest.Name</td>

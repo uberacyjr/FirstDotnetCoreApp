@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Models;
 using WebApplication1.Services;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -15,7 +14,7 @@ namespace WebApplication1.Controllers
 		}
 		public IActionResult Index()
 		{
-			List<Restaurant> model = _restaurantService.GetAll().ToList();
+			var model = new HomeIndexViewModel { Restaurants = _restaurantService.GetAll().ToList() };
 
 			return View(model);
 		}
