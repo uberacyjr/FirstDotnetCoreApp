@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApplication1.Models;
+using WebApplication1.Services;
 
 namespace WebApplication1
 {
@@ -18,6 +20,8 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
 	        services.AddMvc();
+			//Create a stance for each http request
+	        services.AddScoped<IRestaurant, InMemoryRestaurant>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

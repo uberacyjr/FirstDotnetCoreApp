@@ -1,0 +1,17 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<WebApplication1.Models.Restaurant>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Restaurants</title>
+</head>
+<body>
+    <table>
+        @foreach (Restaurant rest in Model)
+        {
+            <tr>
+                <td>@rest.Name</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
